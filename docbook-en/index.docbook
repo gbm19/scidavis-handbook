@@ -4,7 +4,7 @@
 		Docbook main file for Scidavis Manual
 		*************************************
 
-		updated for SciDAVis version >= 1.22 ***
+		updated for SciDAVis version >= 1.23 ***
 
 *************************************************************************
 -->
@@ -14,7 +14,7 @@
 -->
   <!ENTITY appname "SciDAVis">
   <!ENTITY kappname "&appname;">
-  <!ENTITY version "1.22">
+  <!ENTITY version "1.23">
 
   <!ENTITY kappversion "&version;">
   <!ENTITY kappdirectory "scidavis">

@@ -706,6 +706,24 @@ else:
 				upper limit does not belong to the range, while the lower limit
 				does).</para>
 		</sect3>
+		<sect3>
+		    <title>Hints on Python 2 vs Python 3 usage</title>
+		      <para>In version 1.23 of &appname; it was added Python 3 support for scripting. Then, in addition to the differences between Python version 2 and 3 <ulink
+    url="https://docs.python.org/3.0/whatsnew/3.0.html">listed here</ulink>, there are some small tips for users that use non-ASCII characters in python scripts.</para>
+		      <para>When &appname; is built against Python 3, it is required to specify the character encoding in the scripting note (at the beginning, preferably) using: <programlisting width="40">
+		# coding=&lt;encoding name&gt; </programlisting> E. g.: to use the UTF-8 character encoding, add <programlisting width="40">
+		# coding=utf8 </programlisting> to the note.</para>
+	    <para>When &appname; is built against Python 2, it is required to specify the character encoding <emphasis>each time</emphasis> you use a non-ASCII character inside a command in the following way: <programlisting width="40">
+		command(unicode("&lt;string to be used&gt;","utf8")) </programlisting> Some examples are:</para>
+	      <para>- To use the print statement:<programlisting width="40">
+		print(unicode("&lt;string to be used&gt;","utf8"))  </programlisting>
+	      - To modify X axis title on a graph:<programlisting width="40">
+		g = graph("Graph1")
+		l = g.activeLayer()
+		l.setXTitle(unicode("&lt;desired X title&gt;","utf8"))</programlisting>
+	      - To access a graph whose window name has a non-ASCII character:<programlisting width="40">
+		g = graph(unicode("&lt;literal window name&gt;","utf8"))  </programlisting></para>
+		</sect3>
 		</sect2>
 
 		<sect2>
